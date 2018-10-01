@@ -7,7 +7,12 @@ tags:
   - ''
 ---
 Marp
-===
+
+```
+code is here
+```
+
+:gun:
 
 # ![](images/marp.png)
 
