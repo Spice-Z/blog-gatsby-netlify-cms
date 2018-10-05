@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
+    title: '日々是関数',
+    author: 'Yugo Ogura',
+    description: '東京で働くプログラマーの技術的ブログです。',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
