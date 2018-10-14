@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: '日々是関数',
-    author: 'Yugo Ogura',
-    description: '東京で働くプログラマーの技術的ブログです。',
+    author: 'Spice-Z',
+    description: '名古屋のweb系学生の技術ブログです。',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
