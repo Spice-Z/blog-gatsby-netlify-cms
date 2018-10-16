@@ -31,7 +31,7 @@ export default class IndexPage extends React.Component {
                 {post.excerpt}
                 <br />
                 <br />
-                <Link className="button is-small" to={post.fields.slug}>
+                <Link className="button is-small" to={post.fields.slug} style={{ color: "#008080"}}>
                   Keep Reading →
                 </Link>
               </p>

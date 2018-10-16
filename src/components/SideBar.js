@@ -53,6 +53,8 @@ const SideBar = () => (
       <img className="profile-img" src={rabio} alt="らびお" />
       <h2 className="sideBarSubTitle">自己紹介</h2>
       <p>
+        すぱいすと言います。
+        <br/>
         名古屋に住むweb系エンジニア系学生です。
         <br />
         来年から東京でフロントエンドエンジニアなんです。

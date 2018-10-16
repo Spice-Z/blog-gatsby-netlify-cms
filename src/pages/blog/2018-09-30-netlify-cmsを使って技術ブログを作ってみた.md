@@ -1,8 +1,8 @@
 ---
 templateKey: blog-post
-title: Gatsbyを使って技術ブログを作りました
+title: 技術(or ポエム)ブログを作りました
 date: 2018-09-30T12:50:23.296Z
-description: gatsbyを使って技術ブログを作りました
+description: 技術ブログを作りました
 tags:
   - 技術
   - ポエム

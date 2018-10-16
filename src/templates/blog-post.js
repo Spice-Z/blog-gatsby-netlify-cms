@@ -6,11 +6,13 @@ import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 import styled from "styled-components";
+import ShareTwitter from "../components/ShareTwitter";
+import ShareHatena from "../components/ShareHatena";
+import tagIcon from "../img/tag-icon.svg";
 
 const BlogSection = styled.section`
-margin-top: 14px;
-`
-
+  margin-top: 14px;
+`;
 
 export const BlogPostTemplate = ({
   content,
@@ -18,7 +20,8 @@ export const BlogPostTemplate = ({
   description,
   tags,
   title,
-  helmet
+  helmet,
+  location
 }) => {
   const PostContent = contentComponent || Content;
 
@@ -27,21 +30,24 @@ export const BlogPostTemplate = ({
       {helmet || ""}
       <div className="content">
         <h1>{title}</h1>
-        <p>{description}</p>
-        <PostContent content={content} />
         {tags && tags.length ? (
-          <div style={{ marginTop: `4rem` }}>
-            <h4>Tags</h4>
-            <ul className="taglist">
-              {tags.map(tag => (
-                <li key={tag + `tag`}>
-                  <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul className="tagBox">
+            <img src={tagIcon} alt="" />
+            {tags.map(tag => (
+              <li key={tag + `tag`}>
+                <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+              </li>
+            ))}
+          </ul>
         ) : null}
+        <PostContent content={content}/>
+        <div style={{marginTop:"28px"}}>
+          <h2 style={{color:"#008080", marginBottom: "7px"}}>Share Happy?</h2>
+          <ShareTwitter url={location.href}/>
+          <ShareHatena url={location.href}/>
+        </div>
       </div>
+      <Link to={'/'}>TOPへもどる</Link>
     </BlogSection>
   );
 };
@@ -51,10 +57,11 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
-  helmet: PropTypes.instanceOf(Helmet)
+  helmet: PropTypes.instanceOf(Helmet),
+  location: PropTypes.object,
 };
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ data , location }) => {
   const { markdownRemark: post } = data;
 
   return (
@@ -66,6 +73,7 @@ const BlogPost = ({ data }) => {
         helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        location={location}
       />
     </Layout>
   );
@@ -74,7 +82,8 @@ const BlogPost = ({ data }) => {
 BlogPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object
-  })
+  }),
+  location: PropTypes.object,
 };
 
 export default BlogPost;
