@@ -2,6 +2,24 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import Layout from "../components/Layout";
+import styled from "styled-components";
+
+const BlogLinkBox = styled.div`
+border: 1px solid #eaecee;
+padding: 2em 4em;
+@media (max-width:768px){
+  padding: 1em 2em;
+}
+.description{
+  margin: 0;
+}
+.button{
+  font-size: .75rem
+  padding: 7px
+  border: solid 1px #dbddbd
+}
+`
+
 
 export default class IndexPage extends React.Component {
   render() {
@@ -12,12 +30,11 @@ export default class IndexPage extends React.Component {
       <Layout>
         <section>
           <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
+            <h1 style={{ marginTop: "0" }} >Latest Stories</h1>
           </div>
           {posts.map(({ node: post }) => (
-            <div
+            <BlogLinkBox
               className="content"
-              style={{ border: "1px solid #eaecee", padding: "2em 4em" }}
               key={post.id}
             >
               <p>
@@ -27,15 +44,15 @@ export default class IndexPage extends React.Component {
                 <span> &bull; </span>
                 <small>{post.frontmatter.date}</small>
               </p>
-              <p>
+              <p className="description">
                 {post.excerpt}
                 <br />
                 <br />
-                <Link className="button is-small" to={post.fields.slug} style={{ color: "#008080"}}>
+                <Link className="button" to={post.fields.slug}>
                   Keep Reading →
                 </Link>
               </p>
-            </div>
+            </BlogLinkBox>
           ))}
         </section>
       </Layout>

@@ -54,7 +54,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: [ 'M PLUS 1p']
+          families: ['Noto Sans JP']
         }
       }
     }

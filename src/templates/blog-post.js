@@ -9,6 +9,7 @@ import styled from "styled-components";
 import ShareTwitter from "../components/ShareTwitter";
 import ShareHatena from "../components/ShareHatena";
 import tagIcon from "../img/tag-icon.svg";
+import 'github-markdown-css';
 
 const BlogSection = styled.section`
   margin-top: 14px;
@@ -40,7 +41,7 @@ export const BlogPostTemplate = ({
             ))}
           </ul>
         ) : null}
-        <PostContent content={content} />
+        <PostContent content={content} className="mdContent" />
         <div style={{ marginTop: "28px" }}>
           <h2 style={{ color: "#008080", marginBottom: "7px" }}>
             Share Happy?
