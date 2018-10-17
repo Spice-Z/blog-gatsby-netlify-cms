@@ -8,19 +8,22 @@ const TwitterBtn = styled.img`
   height: 40px;
 `;
 
-const ShareTwitter = ({ url }) => (
+const ShareTwitter = ({ url, text }) => (
   <a
-    href={"https://twitter.com/intent/tweet?url="+url}
+    href={
+      "https://twitter.com/intent/tweet?text=" + text + "%0a&url=" + encodeURI(url)
+    }
     target="_blank"
     rel="noopener noreferrer"
-    style={{display: "inline-block",marginRight: "14px"}}
+    style={{ display: "inline-block", marginRight: "14px" }}
   >
     <TwitterBtn src={twitter} alt="" />
   </a>
 );
 
 ShareTwitter.propTypes = {
-  url: PropTypes.string
+  url: PropTypes.string,
+  text: PropTypes.string
 };
 
 export default ShareTwitter;

@@ -10,10 +10,10 @@ const HatenaBtn = styled.img`
 
 const ShareHatena = ({ url }) => (
   <a
-    href={"http://b.hatena.ne.jp/entry/" + url}
+    href={"http://b.hatena.ne.jp/entry/" + encodeURI(url)}
     target="_blank"
     rel="noopener noreferrer"
-    style={{display: "inline-block",marginRight: "14px"}}
+    style={{ display: "inline-block", marginRight: "14px" }}
   >
     <HatenaBtn src={hatena} alt="" />
   </a>

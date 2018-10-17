@@ -40,14 +40,16 @@ export const BlogPostTemplate = ({
             ))}
           </ul>
         ) : null}
-        <PostContent content={content}/>
-        <div style={{marginTop:"28px"}}>
-          <h2 style={{color:"#008080", marginBottom: "7px"}}>Share Happy?</h2>
-          <ShareTwitter url={location.href}/>
-          <ShareHatena url={location.href}/>
+        <PostContent content={content} />
+        <div style={{ marginTop: "28px" }}>
+          <h2 style={{ color: "#008080", marginBottom: "7px" }}>
+            Share Happy?
+          </h2>
+          <ShareTwitter url={location.href} text={title} />
+          <ShareHatena url={location.href} />
         </div>
       </div>
-      <Link to={'/'}>TOPへもどる</Link>
+      <Link to={"/"}>TOPへもどる</Link>
     </BlogSection>
   );
 };
@@ -58,10 +60,10 @@ BlogPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.instanceOf(Helmet),
-  location: PropTypes.object,
+  location: PropTypes.object
 };
 
-const BlogPost = ({ data , location }) => {
+const BlogPost = ({ data, location }) => {
   const { markdownRemark: post } = data;
 
   return (
@@ -83,7 +85,7 @@ BlogPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object
   }),
-  location: PropTypes.object,
+  location: PropTypes.object
 };
 
 export default BlogPost;
