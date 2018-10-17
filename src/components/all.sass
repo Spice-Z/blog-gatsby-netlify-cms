@@ -51,11 +51,17 @@ body
   align-content: bottom
   flex-wrap: wrap
   li
+    height: 21px;
+    line-height: 20px;
     margin: 0 0 0 5px
     padding: 3px 5px
     background: #d3d3d3
     // border: 2px solid #4a4a4a
     border-radius: 3px
+    &:hover
+      background: $primary
+    &:active
+      background: $primary
     a
       color: #fff
       font-weight: bold
