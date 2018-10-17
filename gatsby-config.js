@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    siteUrl: 'https://spice-z.com/',
     title: "日々是関数",
     author: "Spice-Z",
     description: "名古屋のweb系学生の技術ブログです。"
