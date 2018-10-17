@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 
 import Header from '../components/Header'
 import SideBar from '../components/SideBar'
+import 'normalize.css'; 
 import './all.sass'
 import styled from 'styled-components';
 

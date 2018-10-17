@@ -49,6 +49,14 @@ module.exports = {
         output: `/sitemap.xml`,
         exclude: ["/admin/*"],
       }
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: [ 'M PLUS 1p']
+        }
+      }
     }
   ]
 };
