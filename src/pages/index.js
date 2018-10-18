@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import Layout from "../components/Layout";
 import styled from "styled-components";
+import Color from "../components/const/Color";
 
 const BlogLinkBox = styled.div`
 border: 1px solid #eaecee;
@@ -18,8 +19,11 @@ padding: 2em 4em;
   padding: 7px
   border: solid 1px #dbddbd
 }
-`
-
+.button:hover, .button:active {
+  background: ${Color.Primary};
+  color: ${Color.White};
+}
+`;
 
 export default class IndexPage extends React.Component {
   render() {
@@ -30,18 +34,15 @@ export default class IndexPage extends React.Component {
       <Layout>
         <section>
           <div className="content">
-            <h1 style={{ marginTop: "0" }} >Latest Stories</h1>
+            <h1 style={{ marginTop: "0" }}>Latest Stories</h1>
           </div>
           {posts.map(({ node: post }) => (
-            <BlogLinkBox
-              className="content"
-              key={post.id}
-            >
+            <BlogLinkBox className="content" key={post.id}>
               <p>
                 <Link className="has-text-primary" to={post.fields.slug}>
                   {post.frontmatter.title}
                 </Link>
-                <span> &bull; </span>
+                <span> / </span>
                 <small>{post.frontmatter.date}</small>
               </p>
               <p className="description">
