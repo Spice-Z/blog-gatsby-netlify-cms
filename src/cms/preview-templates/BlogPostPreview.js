@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { BlogPostTemplate } from '../../templates/blog-post'
 
-const BlogPostPreview = ({ entry, widgetFor , location}) => (
+const BlogPostPreview = ({ entry, widgetFor, location}) => (
   <BlogPostTemplate
     content={widgetFor('body')}
     description={entry.getIn(['data', 'description'])}
@@ -18,6 +18,10 @@ BlogPostPreview.propTypes = {
   }),
   widgetFor: PropTypes.func,
   location: PropTypes.object
+}
+
+BlogPostPreview.defaultProps = {
+  location: {href: "https://spice-z.com"}
 }
 
 export default BlogPostPreview
