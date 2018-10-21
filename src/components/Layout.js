@@ -7,11 +7,11 @@ import 'normalize.css';
 import './all.sass'
 import styled from 'styled-components';
 
-const MainContants = styled.div`
+const Contents = styled.div`
 margin-top: 14px;
 padding: 0 35px;
 display: flex;
-.posts{
+.main{
   width:70%;
 }
 SideBar{
@@ -20,7 +20,7 @@ SideBar{
 @media (max-width:768px){
   flex-direction: column;
   padding: 14px;
-  .posts{
+  .main{
     width: 100%;
     padding: 0 7px;
   }
@@ -30,10 +30,10 @@ const TemplateWrapper = ({ children }) => (
   <div>
     <Helmet title="日々是関数" />
     <Header />
-    <MainContants>
-      <div className="posts">{children}</div>
+    <Contents>
+      <div className="main">{children}</div>
       <SideBar className="sideBar"></SideBar>
-    </MainContants>
+    </Contents>
   </div>
 )
 
