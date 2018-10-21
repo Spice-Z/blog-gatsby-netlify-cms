@@ -8,7 +8,8 @@ import './all.sass'
 import styled from 'styled-components';
 
 const Contents = styled.div`
-margin-top: 14px;
+max-width: 1280px;
+margin: 14px auto;
 padding: 0 35px;
 display: flex;
 .main{
