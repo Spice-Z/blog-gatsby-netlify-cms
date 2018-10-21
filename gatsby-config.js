@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://spice-z.com/',
+    siteUrl: "https://spice-z.com/",
     title: "日々是関数",
     author: "Spice-Z",
     description: "名古屋のweb系学生の技術ブログです。"
@@ -8,6 +8,12 @@ module.exports = {
   plugins: [
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
+    {
+      resolve: `gatsby-plugin-favicon`,
+      options: {
+        logo: "./src/img/favicon.png"
+      }
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -45,16 +51,16 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-sitemap`,
-      options:{
+      options: {
         output: `/sitemap.xml`,
-        exclude: ["/admin/*"],
+        exclude: ["/admin/*"]
       }
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ['Noto Sans JP']
+          families: ["Noto Sans JP"]
         }
       }
     }
