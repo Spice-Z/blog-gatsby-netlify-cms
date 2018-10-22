@@ -9,7 +9,7 @@ import styled from "styled-components";
 import ShareTwitter from "../components/ShareTwitter";
 import ShareHatena from "../components/ShareHatena";
 import tagIcon from "../img/tag-icon.svg";
-import 'github-markdown-css';
+import "github-markdown-css";
 
 const BlogSection = styled.section`
   margin-top: 14px;
@@ -50,7 +50,9 @@ export const BlogPostTemplate = ({
           <ShareHatena url={location.href} />
         </div>
       </div>
-      <Link to={"/"}>TOPへもどる</Link>
+      <Link to={"/"} style={{ display: "block", marginTop: "35px" }}>
+        TOPへもどる
+      </Link>
     </BlogSection>
   );
 };
