@@ -75,7 +75,7 @@ const BlogPost = ({ data, location }) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
-        helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
+        helmet={<Helmet title={`${post.frontmatter.title} | Blog`} meta={[{ name: 'description', content: `${post.frontmatter.title}` },{ property: 'og:title', content: `${post.frontmatter.title}` },{ property: 'og:type', content: 'blog' }]} />}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         location={location}
