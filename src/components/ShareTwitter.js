@@ -8,21 +8,26 @@ const TwitterBtn = styled.img`
   height: 40px;
 `;
 
-const ShareTwitter = ({ url, text }) => (
-  <a
-    href={
-      "https://twitter.com/intent/tweet?text=" + text + "%0a&url=" + encodeURI(url)
-    }
-    target="_blank"
-    rel="noopener noreferrer"
-    style={{ display: "inline-block", marginRight: "14px" }}
-  >
-    <TwitterBtn src={twitter} alt="" />
-  </a>
-);
+const ShareTwitter = ({ location, text }) => {
+  return (
+    <a
+      href={
+        "https://twitter.com/intent/tweet?text=" +
+        text +
+        "%0a&url=" +
+        encodeURI(`https://spice-z.com/${location.pathname}`)
+      }
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ display: "inline-block", marginRight: "14px" }}
+    >
+      <TwitterBtn src={twitter} alt="" />
+    </a>
+  );
+};
 
 ShareTwitter.propTypes = {
-  url: PropTypes.string,
+  location: PropTypes.object,
   text: PropTypes.string
 };
 

@@ -8,19 +8,21 @@ const HatenaBtn = styled.img`
   height: 40px;
 `;
 
-const ShareHatena = ({ url }) => (
-  <a
-    href={"http://b.hatena.ne.jp/entry/" + encodeURI(url)}
-    target="_blank"
-    rel="noopener noreferrer"
-    style={{ display: "inline-block", marginRight: "14px" }}
-  >
-    <HatenaBtn src={hatena} alt="" />
-  </a>
-);
+const ShareHatena = ({ location }) => {
+  return (
+    <a
+      href={"http://b.hatena.ne.jp/entry/" + encodeURI(`https://spice-z.com/${location.pathname}`)}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{ display: "inline-block", marginRight: "14px" }}
+    >
+      <HatenaBtn src={hatena} alt="" />
+    </a>
+  );
+};
 
 ShareHatena.propTypes = {
-  url: PropTypes.string
+  location: PropTypes.object
 };
 
 export default ShareHatena;

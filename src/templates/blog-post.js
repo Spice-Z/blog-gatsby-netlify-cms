@@ -46,8 +46,8 @@ export const BlogPostTemplate = ({
           <h2 style={{ color: "#008080", marginBottom: "7px" }}>
             Share Happy?
           </h2>
-          <ShareTwitter url={location.href} text={title} />
-          <ShareHatena url={location.href} />
+          <ShareTwitter location={location} text={title} />
+          <ShareHatena location={location} />
         </div>
       </div>
       <Link to={"/"} style={{ display: "block", marginTop: "35px" }}>
@@ -75,7 +75,17 @@ const BlogPost = ({ data, location }) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
-        helmet={<Helmet title={`${post.frontmatter.title} | Blog`} meta={[{ name: 'description', content: `${post.frontmatter.title}` },{ property: 'og:title', content: `${post.frontmatter.title}` },{ property: 'og:type', content: 'blog' }]} />}
+        helmet={
+          <Helmet 
+            title={`${post.frontmatter.title} | Blog`} 
+            meta={[
+              { name: 'description', content: `${post.frontmatter.title}` },
+              { property: 'og:title', content: `${post.frontmatter.title}` },
+              { property: 'og:image', content: `${post.frontmatter.image}` },
+              { property: 'og:type', content: 'blog' }
+            ]}
+          />
+        }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         location={location}
@@ -91,6 +101,10 @@ BlogPost.propTypes = {
   location: PropTypes.object
 };
 
+BlogPost.defaultProps = {
+  location: {href: "https://spice-z.com"}
+}
+
 export default BlogPost;
 
 export const pageQuery = graphql`
@@ -102,6 +116,7 @@ export const pageQuery = graphql`
         date(formatString: "YYYY/MMMM/DD")
         title
         description
+        image
         tags
       }
     }
