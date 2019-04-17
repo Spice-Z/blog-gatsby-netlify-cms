@@ -53,18 +53,16 @@ const SideBar = () => (
       <img className="profile-img" src={rabio} alt="らびお" />
       <h2 className="sideBarSubTitle">自己紹介</h2>
       <p>
-        すぱいすと言います。
+        こんにちは。スパイスです！
         <br/>
-        名古屋に住むweb系エンジニア系学生です。
-        <br />
-        来年から東京でフロントエンドエンジニアなんです。
+        東京でフロントエンドエンジニアやってます。
         <br />
         アイコンは実家で飼っているうさぎ。
         <br />
       </p>
     </div>
     <div className="sns-links">
-      <h2 className="sideBarSubTitle">Follow me ?</h2>
+      <h2 className="sideBarSubTitle">Follow me !</h2>
       <a
         href="https://github.com/Spice-Z"
         target="_blank"
