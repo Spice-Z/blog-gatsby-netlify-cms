@@ -3,7 +3,7 @@ module.exports = {
     siteUrl: "https://spice-z.com/",
     title: "日々是関数",
     author: "Spice-Z",
-    description: "名古屋のweb系学生の技術ブログです。"
+    description: "東京でフロントエンジニアやっとります。"
   },
   plugins: [
     "gatsby-plugin-react-helmet",
